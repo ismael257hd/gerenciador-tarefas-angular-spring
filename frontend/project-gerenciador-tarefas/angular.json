@@ -12,8 +12,9 @@
       "architect": {
         "build": {
           "builder": "@angular/build:application",
-          "options": {
-            "browser": "src/main.ts",
+          "options": {            
+            "outputPath": "dist/spa",
+            "index": "src/index.html",            
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -33,6 +34,12 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",

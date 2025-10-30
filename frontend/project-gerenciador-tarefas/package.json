@@ -7,6 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "build:prod": "ng build --configuration production",
+    "start:prod": "ng build --configuration production && npx http-server dist/spa/browser -p 8081 -c-1 --proxy http://127.0.0.1:8080?/",
     "serve:ssr:project-gerenciador-tarefas": "node dist/project-gerenciador-tarefas/server/server.mjs"
   },
   "prettier": {

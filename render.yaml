@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: angular-frontend
+    env: node
+    rootDir: frontend
+    buildCommand: npm run build:prod
+    startCommand: npx http-server dist/spa/browser -p 10000 -c-1 --proxy https://gerenciador-tarefas-backend-vifh.onrender.com/
+    plan: free
+    envVars:
+      - key: NODE_VERSION
+        value: 22.0.0
