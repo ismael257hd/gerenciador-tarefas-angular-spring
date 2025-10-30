@@ -58,7 +58,7 @@
 		MAVEN_HOME=C:\Program Files\Apache\apache-maven-3.8.3  
 		%MAVEN_HOME%\bin
 		
-  # Como Executar o Projeto	
+  # Como Executar os Testes
 	mvn -Dtest=TaskControllerTest test ou pelo Eclipse executando a classe TaskControllerTest.java
     mvn -Dtest=TaskServiceImplTest test ou pelo Eclipse executando a classe TaskServiceImplTest.java
   # Frontend (Angular 20)
