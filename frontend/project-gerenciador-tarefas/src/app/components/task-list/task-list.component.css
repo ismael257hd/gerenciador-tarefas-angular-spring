@@ -1,0 +1,85 @@
+.full-width-table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.no-data {
+  margin-top: 20px;
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}
+
+.blue-icon {
+    color: rgb(74, 143, 247);
+}
+
+.hidden-column {
+  display: none;
+}
+
+.completed-task {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.checkbox-cell {
+  text-align: center;
+  width: 50px;
+}
+
+.full-width-table {
+  width: 100%;
+  table-layout: fixed; /* garante controle de largura */
+}
+
+/* Define a largura fixa da coluna de ações */
+.mat-column-acoes {
+  width: 200px;
+  text-align: center;
+}
+
+/* Coluna de título ocupa o restante */
+.mat-column-title {
+  width: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mat-column-description {
+  width: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Centraliza a checkbox */
+.checkbox-header,
+.checkbox-cell {
+  text-align: center;
+  width: 60px; /* ajuste conforme necessário */
+  padding: 0 !important;
+}
+
+/* Ajusta a altura e alinha verticalmente */
+.checkbox-cell mat-checkbox {
+  vertical-align: middle;
+}
+
+/* Evita que a linha fique desproporcional */
+.mat-mdc-cell, .mat-mdc-header-cell {
+  padding: 8px 16px !important;
+  box-sizing: border-box;
+}
+
+/* Mantém o risco na linha quando concluída */
+.completed-task {
+  text-decoration: line-through;
+  color: rgb(35, 230, 9);
+}
+
+tr.completed-task td {
+  text-decoration: line-through;
+  color: rgb(35, 230, 9);
+}

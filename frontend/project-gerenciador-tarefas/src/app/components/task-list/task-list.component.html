@@ -1,0 +1,46 @@
+
+<table mat-table [dataSource]="tasks" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="id" >
+    <th mat-header-cell *matHeaderCellDef [hidden]="true"> ID </th>
+    <td mat-cell *matCellDef="let task" [hidden]="true"> {{ task.id }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef> Titulo </th>
+    <td mat-cell *matCellDef="let task"> {{ task.title }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef> Descrição </th>
+    <td mat-cell *matCellDef="let task"> {{ task.description }} </td>
+  </ng-container>
+  
+  <ng-container matColumnDef="completed">
+    <th mat-header-cell *matHeaderCellDef>Completa</th>
+    <td mat-cell *matCellDef="let task" class="checkbox-cell">
+      <mat-checkbox
+        [checked]="task.completed"
+        (click)="onToggleCompleted(task)"
+        aria-label="Completar tarefa">
+      </mat-checkbox>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="acoes">
+    <th mat-header-cell *matHeaderCellDef> Ações </th>
+    <td mat-cell *matCellDef="let task">
+      <button mat-mini-button color="primary" (click)="abrirModal(task)"><mat-icon class="blue-icon">edit</mat-icon>Editar</button>
+      <button mat-mini-button color="warn" (click)="excluir(task.id!)"><mat-icon class="blue-icon">delete</mat-icon>Excluir</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row
+      *matRowDef="let row; columns: displayedColumns;"
+      [class.completed-task]="row.completed">
+  </tr>
+</table>
+
+<br />
+<button mat-raised-button color="primary" (click)="abrirModal()"><mat-icon class="blue-icon">add</mat-icon>Nova tarefa</button>

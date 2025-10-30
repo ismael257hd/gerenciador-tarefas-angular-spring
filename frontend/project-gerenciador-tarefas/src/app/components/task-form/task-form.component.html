@@ -1,0 +1,31 @@
+
+<h2 mat-dialog-title>{{ isEdit ? 'Editar tarefa' : 'Cadastrar tarefa' }}</h2>
+
+<div mat-dialog-content class="dialog-content">
+  <form>
+    
+    <div *ngIf="serverErrors.title" class="error">
+      {{ serverErrors.title }}   
+    </div>
+
+    <mat-form-field appearance="outline" class="form-field" style="width: 100%;">
+      <mat-label>Título</mat-label>
+      <input matInput [(ngModel)]="task.title" name="title" required />
+    </mat-form-field>
+   
+    <mat-form-field appearance="outline" class="form-field" style="width: 100%;">
+      <mat-label>Descrição</mat-label>
+      <input matInput [(ngModel)]="task.description" name="description" />
+      </mat-form-field>
+    
+  </form>
+</div>
+
+<div mat-dialog-actions align="end" class="dialog-actions">
+  <button mat-stroked-button (click)="cancelar()">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="salvar()">
+    <mat-icon class="blue-icon">save</mat-icon>
+    {{ isEdit ? 'Salvar' : 'Cadastrar' }}
+  </button>
+</div>
+
